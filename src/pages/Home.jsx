@@ -23,7 +23,7 @@ let token = ctx.userInfo.token;
 
   const [posts, setPosts] = useState([]);
   async function getAllPosts() {
-    let res = await axios.get(`http://localhost:8990/api/posts/getAllPost`);
+    let res = await axios.get(`https://connectify-backend-n6aw.onrender.com/api/posts/getAllPost`);
     let data = res.data;
     // console.log(data.posts);
     setPosts(data.posts);
@@ -54,7 +54,7 @@ let token = ctx.userInfo.token;
       text:newComment
     }
 
-    let res = await axios.post(`http://localhost:8990/api/posts/comment/${ele._id}`,obj,{
+    let res = await axios.post(`https://connectify-backend-n6aw.onrender.com/api/posts/comment/${ele._id}`,obj,{
       headers:{
         'Authorization':token
       }
@@ -74,7 +74,7 @@ let token = ctx.userInfo.token;
     console.log(commentId);
     console.log(postId);
 
-    let res = await axios.delete(`http://localhost:8990/api/posts/deleteComment/${commentId}/${postId}`)
+    let res = await axios.delete(`https://connectify-backend-n6aw.onrender.com/api/posts/deleteComment/${commentId}/${postId}`)
     let data = res.data; 
 
     if(data.success){
@@ -89,7 +89,7 @@ let token = ctx.userInfo.token;
 
    const handleLikes = async(postId) =>{
     console.log(postId)
-    let res = await axios.put(`http://localhost:8990/api/posts/likepost/${postId}`,{},{
+    let res = await axios.put(`https://connectify-backend-n6aw.onrender.com/api/posts/likepost/${postId}`,{},{
       headers:{
         'Authorization':token
       }

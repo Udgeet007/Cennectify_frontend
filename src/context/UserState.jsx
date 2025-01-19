@@ -17,7 +17,7 @@ const UserState = (props) => {
   console.log(userInfo);
 
   const getUserDetails = async () => {
-    let res = await axios.get(`http://localhost:8990/api/users/getUser`, {
+    let res = await axios.get(`https://connectify-backend-n6aw.onrender.com/api/users/getUser`, {
       headers: {
         Authorization: userInfo.token,
       },

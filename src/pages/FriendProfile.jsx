@@ -30,7 +30,7 @@ const FriendProfile = () => {
   console.log(friend);
   console.log(friendPost);   
   async function getFriendUser(){
-    let res = await axios.get(`http://localhost:8990/api/users/getuser/${location.state}`)
+    let res = await axios.get(`https://connectify-backend-n6aw.onrender.com/api/users/getuser/${location.state}`)
     let data = res.data;
     if(data.success){
       setfriend(data.friend);
@@ -38,7 +38,7 @@ const FriendProfile = () => {
   }
 
   async function getFriendPosts(){
-    let res = await axios.get(`http://localhost:8990/api/posts/getfriendPost/${location.state}`)
+    let res = await axios.get(`https://connectify-backend-n6aw.onrender.com/api/posts/getfriendPost/${location.state}`)
     let data = res.data;
     if(data.success){
       setfriendPost(data.posts);
@@ -54,7 +54,7 @@ const FriendProfile = () => {
   },[location.state]);
 
   const handleFollow = async() =>{
-    let res = await axios.post(`http://localhost:8990/api/users/followUser/${friend._id}`,{},{
+    let res = await axios.post(`https://connectify-backend-n6aw.onrender.com/api/users/followUser/${friend._id}`,{},{
       headers:{
         'Authorization':ctx.userInfo.token
       }

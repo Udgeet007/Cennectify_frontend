@@ -22,7 +22,7 @@ const Chat = () => {
   const [allchat, setallchat] = useState([]);
   const getChat = async () => {
     let res = await axios.get(
-      `http://localhost:8990/api/message/getchat/${friendId}`,
+      `https://connectify-backend-n6aw.onrender.com/api/message/getchat/${friendId}`,
       {
         headers: {
           "Authorization": token,
@@ -39,7 +39,7 @@ const Chat = () => {
   }, []);
 
   useEffect(() =>{
-    socketRef.current = io("http://localhost:8990", {transports: ["websocket"]});
+    socketRef.current = io("https://connectify-backend-n6aw.onrender.com", {transports: ["websocket"]});
     socketRef.current.emit('addUser',userStore?.userInfo.userId);  
   },[]);
 
@@ -50,7 +50,7 @@ const Chat = () => {
     let obj = {
       text:inputRef.current.value
     }
-    let res = await axios.post(`http://localhost:8990/api/message/sendmessage/${friendId}`,obj, {
+    let res = await axios.post(`https://connectify-backend-n6aw.onrender.com/api/message/sendmessage/${friendId}`,obj, {
       headers:{
         'Authorization':token
       }

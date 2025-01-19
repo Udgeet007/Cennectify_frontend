@@ -26,7 +26,7 @@ const Signup = () => {
     e.preventDefault();
     console.log(userDetails);
 
-    let res = await fetch("http://localhost:8990/api/users/create", {
+    let res = await fetch("https://connectify-backend-n6aw.onrender.com/api/users/create", {
       method: "POST",
       headers: {
         "content-type": "application/json",

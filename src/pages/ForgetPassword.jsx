@@ -11,7 +11,7 @@ const ForgetPassword = () => {
       email: emailRef.current.value
     }
     // console.log(obj);
-    let res = await axios.post(`http://localhost:8990/api/users/forgetPassword`,obj);
+    let res = await axios.post(`https://connectify-backend-n6aw.onrender.com/api/users/forgetPassword`,obj);
     let data = res.data;
     if(data.success){
       toast.success(data.msg,{position:'top-center'})

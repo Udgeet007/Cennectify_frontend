@@ -78,7 +78,7 @@ const Sidebar = (props) => {
 
   const handleSubmit = async () => {
     let res = await axios.post(
-      `http://localhost:8990/api/posts/create`,
+      `https://connectify-backend-n6aw.onrender.com/api/posts/create`,
       details,
       {
         headers: {

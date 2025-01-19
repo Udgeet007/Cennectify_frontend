@@ -15,7 +15,7 @@ const Profile = () => {
   const [userInfo, setUserInfo] = useState("");
   console.log(userInfo);
   async function getUserData() {
-    let res = await axios.get("http://localhost:8990/api/users/getUser", {
+    let res = await axios.get("https://connectify-backend-n6aw.onrender.com/api/users/getUser", {
       headers: {
         Authorization: ctx.userInfo.token,
       },
@@ -28,7 +28,7 @@ const Profile = () => {
   const [allPosts, setAllPosts] = useState([]);
   console.log(allPosts);
   async function yourPosts() {
-    let res = await axios.get(`http://localhost:8990/api/posts/getYourPost`, {
+    let res = await axios.get(`https://connectify-backend-n6aw.onrender.com/api/posts/getYourPost`, {
       headers: {
         Authorization: ctx.userInfo.token,
       },
@@ -62,7 +62,7 @@ const Profile = () => {
 
     if (data.secure_url) {
       let res1 = await axios.put(
-        `http://localhost:8990/api/users/update/${userId}`,
+        `https://connectify-backend-n6aw.onrender.com/api/users/update/${userId}`,
         { coverPic: data.secure_url },
         {
           headers: {
@@ -100,7 +100,7 @@ const Profile = () => {
 
     if (data.secure_url) {
       let res1 = await axios.put(
-        `http://localhost:8990/api/users/update/${userId}`,
+        `https://connectify-backend-n6aw.onrender.com/api/users/update/${userId}`,
         { profilePic: data.secure_url },
         {
           headers: {
@@ -128,7 +128,7 @@ const Profile = () => {
   const handleUpdateSubmit = async(e) =>{
     e.preventDefault();
     let res = await axios.put(
-      `http://localhost:8990/api/users/update/${userId}`,
+      `https://connectify-backend-n6aw.onrender.com/api/users/update/${userId}`,
       userInfo,
       {
         headers: {

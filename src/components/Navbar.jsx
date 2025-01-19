@@ -18,7 +18,7 @@ const Navbar = () => {
   const [friendsUsers, setfriendsUsers]= useState([]);
   console.log(friendsUsers);
   const handleInputChanger=async(e) =>{
-   let res = await axios.get(`http://localhost:8990/api/users/username?q=${e.target.value}`);
+   let res = await axios.get(`https://connectify-backend-n6aw.onrender.com/api/users/username?q=${e.target.value}`);
    let data = res.data;
     setfriendsUsers(data);
   }

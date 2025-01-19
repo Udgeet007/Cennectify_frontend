@@ -20,7 +20,7 @@ const Login = () => {
     };
 
     try {
-      let res = await axios.post("http://localhost:8990/api/users/login", obj, {
+      let res = await axios.post("https://connectify-backend-n6aw.onrender.com/api/users/login", obj, {
         headers: { "Content-Type": "application/json" },
       });
 
